@@ -1,0 +1,28 @@
+{
+  "locs": [
+    {
+      "id": 1,
+      "latitude": 49.00069552554859,
+      "longitude": 8.404456948048587,
+      "name": "Luisenstraße 17"
+    },
+    {
+        "id": 2,
+        "latitude": 49.1,
+        "longitude": 8.3,
+        "name" : "Blöde WG"
+    },
+    {
+      "id": 3,
+      "latitude": 47,
+      "longitude": 8,
+      "name" : "KIT Campus Süd"
+  },
+  {
+    "id": 4,
+    "latitude": 38.8974,
+    "longitude": 77.0374,
+    "name" : "Oval Office"
+}
+  ]
+}

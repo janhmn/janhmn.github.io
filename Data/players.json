@@ -1,0 +1,40 @@
+{
+  "players": [
+    {
+      "id": "001",
+      "name": "Jan"
+    },
+    {
+      "id": "002",
+      "name": "Jannik"
+    },
+    {
+      "id": "003",
+      "name": "Lisa"
+    },
+    {
+      "id": "004",
+      "name": "Philip"
+    },
+    {
+      "id": "005",
+      "name": "Flexi"
+    },
+    {
+      "id": "006",
+      "name": "Vivi"
+    },
+    {
+      "id": "007",
+      "name": "Felix"
+    },
+    {
+      "id": "008",
+      "name": "Eminem"
+    },
+    {
+      "id": "009",
+      "name": "Obama"
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Setup</title>
+
+    <link rel="stylesheet" href="setupStyles.css" />
+    <link rel="stylesheet" href="../../modal-styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/c115aefb93.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script defer src="modal-script.js"></script>
+    <script defer src="changeGameMode.js"></script>
+    <script defer src="playerButtons.js"></script>
+    <script defer src="gameButton.js"></script>
+    <script defer src="insertLocation.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid" id="mainContainer">
+      <div class="container-fluid barSize" id="header">
+        <h1 id="headingText">Set Up Game</h1>
+      </div>
+
+      <div class="container-fluid" id="mainBody">
+        <div class="row verticalPadding" style="padding-top: 50px">
+          <div class="col horizontalAlign">
+            <button
+              data-modal-target="#modal"
+              class="btn btn-danger btn-lg"
+              id="player1btn"
+            >
+              Player 1
+            </button>
+          </div>
+          <div class="col horizontalAlign">
+            <button
+              data-modal-target="#modal"
+              class="btn btn-primary btn-lg"
+              id="player2btn"
+            >
+              Player 2
+            </button>
+          </div>
+        </div>
+
+        <div class="row verticalPadding" id="lowerVsRow">
+          <div class="col horizontalAlign" id="lowerVs">Vs.</div>
+        </div>
+
+        <div class="row verticalPadding">
+          <div class="col horizontalAlign">
+            <button
+              data-modal-target="#modal"
+              class="btn btn-danger btn-lg"
+              id="player3btn"
+            >
+              Player 3
+            </button>
+          </div>
+          <div class="col horizontalAlign">
+            <button
+              data-modal-target="#modal"
+              class="btn btn-primary btn-lg"
+              id="player4btn"
+            >
+              Player 4
+            </button>
+          </div>
+        </div>
+
+        <div class="row verticalPadding" style="padding-top: 100px">
+          <div class="col horizontalAlign">
+            <button
+              type="button"
+              class="btn btn-success btn-lg"
+              id="2v2btn"
+              disabled
+            >
+              2 gegen 2
+            </button>
+          </div>
+          <div class="col horizontalAlign">
+            <button class="btn btn-secondary btn-lg" id="1v1btn">
+              1 gegen 1
+            </button>
+          </div>
+        </div>
+
+        <div class="container-fluid verticalPadding">
+          <div class="row normalSizedItems" style="padding-top: 25px">
+            <div class="row locRow">
+              <div class="col" id="locationCol" style="text-align: center">
+                <span id="locationArrow"
+                  ><i class="fas fa-location-arrow"></i
+                ></span>
+                <p id="locationText">searching Location...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid barSize" id="footerCont">
+        <a
+          class="btn btn-secondary btn-lg noClick"
+          id="losBtn"
+          href="../GameActive/game.html"
+          >Los!</a
+        >
+      </div>
+    </div>
+
+    <!-- Modal content -->
+    <div id="myModal" class="container-fluid modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Choose Player</h2>
+        </div>
+        <div class="modal-body" id="modal-body"></div>
+      </div>
+    </div>
+  </body>
+</html>

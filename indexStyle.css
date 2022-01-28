@@ -1,0 +1,112 @@
+#header {
+  background-color: tomato;
+  height: 10%;
+  position: fixed;
+  overflow: hidden;
+  top: 0px;
+}
+
+#mainContainer{
+  padding:0%;
+}
+
+#mainBody{
+  background-color: whitesmoke;
+  height: 100%;
+}
+
+#footer{
+  background-color: tomato;
+  height: 10%;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+
+#tableContainer{
+  text-align: center;
+  background-color: whitesmoke;
+  padding: 5%;
+  border: 1px solid tomato;
+  border-radius: 15px;
+  margin-top: 5%;
+}
+
+#userIcon{
+  padding-bottom: 15px;
+  color: white;
+  font-size: xx-large;
+  text-align: right;
+}
+
+#settingsIcon{
+  padding-bottom: 15px;
+  color: white;
+  font-size: xx-large;
+  text-align: left;
+}
+
+#startButton{
+  background-color: green;
+
+}
+
+#locationCol{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: x-large;
+  padding: 0px;
+}
+
+#locationtext {
+  color: white;
+  font-size: x-large;
+  font-style: bold;
+
+  padding-top: 12px;
+  padding-left: 5px;
+}
+
+#locationArrow {
+  color: white;
+  font-size: x-large;
+
+  padding-right: 5px;
+}
+
+.locRow {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.locCol{
+  margin: 0px;
+  padding-right: 5px;
+  padding-left: 5px;
+
+  font-style: bold;
+  font-size: large;
+}
+
+.verticalPadding {
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+.buttonRow{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5%;
+}
+
+.offsetTop{
+  padding-top: 25%;
+}
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

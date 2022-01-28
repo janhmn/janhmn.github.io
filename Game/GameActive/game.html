@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="game-styles.css" />
+    <link rel="stylesheet" href="../../modal-styles.css" />
+    <script
+      src="https://kit.fontawesome.com/c115aefb93.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="winningCondition.js"></script>
+    <script defer src="dataWriting.js"></script>
+    <script defer src="insertData.js"></script>
+    <script defer src="logic.js"></script>
+  </head>
+  <div>
+    <div class="container-fluid" id="mainContainer">
+      <div class="container-fluid barSize" id="header">
+        <h1 id="headingText">Game</h1>
+      </div>
+
+      <div class="container-fluid" id="content">
+        <div class="row" id="gameScore">
+          <div class="col centered">
+            <div class="redCircle">
+              <h1 class="scoreNumber" id="team1score">10</h1>
+            </div>
+          </div>
+
+          <div class="col centered">
+            <div class="blueCircle">
+              <h1 class="scoreNumber" id="team2score">10</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" id="teamTags">
+          <div class="col">
+            <h2 class="teamTag" id="redTag">Team 1</h2>
+          </div>
+          <div class="col">
+            <h2 class="teamTag" id="blueTag">Team 2</h2>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="row" id="gameOrder">
+          <div class="col" id="orderCol">
+            <h3 class="orderBox" id="orderBox">Spieler's turn!</h3>
+          </div>
+        </div>
+
+        <div class="row horizontalSpacing" id="hitButtonRow">
+          <div class="col nonPadding">
+            <button class="btn btn-success fullWidth largeText" id="hitButton">
+              Hit
+            </button>
+          </div>
+          <div class="col">
+            <button class="btn btn-danger fullWidth largeText" id="missButton">
+              Miss
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid verticalPadding" id="locationDiv">
+        <div class="row locRow">
+          <div class="col" id="locationCol" style="text-align: center">
+            <span id="locationArrow"
+              ><i class="fas fa-location-arrow"></i
+            ></span>
+            <p class="locCol" id="locationText">Location</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid barSize" id="footer">
+        <button class="btn btn-primary btn-lg">Abort</button>
+      </div>
+    </div>
+
+    <!-- Red Modal  -->
+    <div id="myRedModal" class="container-fluid modal">
+      <div class="modal-content">
+        <div class="modal-header centered">
+          <h2>Choose Cup</h2>
+        </div>
+        <div class="modal-body" id="modalRed-body">
+          <div class="row centered">
+            <div class="redCircle" id="red10"></div>
+            <div class="redCircle" id="red9"></div>
+            <div class="redCircle" id="red8"></div>
+            <div class="redCircle" id="red7"></div>
+          </div>
+          <div class="row centered">
+            <div class="redCircle" id="red6"></div>
+            <div class="redCircle" id="red5"></div>
+            <div class="redCircle" id="red4"></div>
+          </div>
+          <div class="row centered">
+            <div class="redCircle" id="red3"></div>
+            <div class="redCircle" id="red2"></div>
+          </div>
+          <div class="row centered">
+            <div class="redCircle" id="red1"></div>
+          </div>
+
+          <div class="row centered" style="margin-top: 10%">
+            <button
+              class="btn btn-secondary btn-lg largeText"
+              id="confirmRedBtn"
+              disabled
+            >
+              Confirm
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blue Modal  -->
+    <div id="myBlueModal" class="container-fluid modal">
+      <div class="modal-content">
+        <div class="modal-header centered">
+          <h2>Choose Cup</h2>
+        </div>
+        <div class="modal-body" id="modalRed-body">
+          <div class="row centered">
+            <div class="blueCircle" id="blue10"></div>
+            <div class="blueCircle" id="blue9"></div>
+            <div class="blueCircle" id="blue8"></div>
+            <div class="blueCircle" id="blue7"></div>
+          </div>
+          <div class="row centered">
+            <div class="blueCircle" id="blue6"></div>
+            <div class="blueCircle" id="blue5"></div>
+            <div class="blueCircle" id="blue4"></div>
+          </div>
+          <div class="row centered">
+            <div class="blueCircle" id="blue3"></div>
+            <div class="blueCircle" id="blue2"></div>
+          </div>
+          <div class="row centered">
+            <div class="blueCircle" id="blue1"></div>
+          </div>
+
+          <div class="row centered" style="margin-top: 10%">
+            <button
+              class="btn btn-secondary btn-lg largeText"
+              id="confirmBlueBtn"
+              disabled
+            >
+              Confirm
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Red Win Modal  -->
+    <div id="myRedWinModal" class="container-fluid modal">
+      <div class="modal-content">
+        <div class="modal-header winheading">
+          <h1>R E D   W O N</h1>
+        </div>
+        <div class="modal-body winbody">
+          <a
+          class="btn btn-success btn-lg"
+          id="redWonBtn"
+          href="../../index.html"
+          >Log Game</a
+        >
+        </div>
+      </div>
+    </div>
+
+    <!-- Blue Win Modal  -->
+    <div id="myBlueWinModal" class="container-fluid modal">
+      <div class="modal-content">
+        <div class="modal-header winheading">
+          <h1>B L U E   W O N</h1>
+        </div>
+        <div class="modal-body winbody">
+          <a
+          class="btn btn-success btn-lg"
+          id="blueWonBtn"
+          href="../../index.html"
+          >Log Game</a
+        >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

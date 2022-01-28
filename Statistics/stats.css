@@ -1,0 +1,63 @@
+.noMargin{
+    padding: 0% !important;
+    margin: 0px;
+}
+
+.header{
+    background-color: tomato;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: auto;
+    padding-bottom: auto;
+}
+
+.heading {
+    color: white;
+    font-size: xx-large;
+}
+
+.h2{
+    font-size: x-small !important;
+}
+
+.navigationRow{
+    height: 5%;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.verticalPadding{
+    padding-top: auto;
+    padding-bottom: auto;
+}
+
+.navCol{
+    margin: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+}
+
+.selected{
+    background-color: white;
+    color: blue;
+}
+
+.centered{
+    padding: 10%;
+}
+
+.centeredTable{
+    width: 100%;
+}
+
+.display{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
