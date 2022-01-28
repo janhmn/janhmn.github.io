@@ -31,8 +31,8 @@ function calculatePosition(position) {
 
   savedLocs.locs.forEach((element) => {
     if (
-      Math.abs(element.latitude - lat) < 0.1 &&
-      Math.abs(element.longitude - long) < 0.1
+      Math.abs(element.latitude - lat) < 0.2 &&
+      Math.abs(element.longitude - long) < 0.2
     ) {
       console.log(element.name);
       document.getElementById("locationText").innerHTML = element.name;
