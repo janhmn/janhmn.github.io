@@ -38,7 +38,7 @@ function calculatePosition(position) {
       document.getElementById("locationText").innerHTML = element.name;
       localStorage.setItem('location' , element.name)
     } else {
-      console.log(element.name + " is too far away");
+      document.getElementById("locationText").innerHTML = "unknown";
     }
   });
 }
