@@ -43,6 +43,9 @@ function getCupNumber(id) {
 function logGameRed() {
   gameData.winners.push(gameData.players[0]);
   gameData.winners.push(gameData.players[2]);
+  var currentGameData = JSON.parse(localStorage.getItem("pastGames"));
+  currentGameData.push(gameData);
+  localStorage.setItem("pastGames", JSON.stringify(currentGameData));
   localStorage.setItem("gameData", JSON.stringify(gameData));
   console.log(JSON.parse(localStorage.getItem("gameData")));
 }
