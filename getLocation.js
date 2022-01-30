@@ -4,10 +4,7 @@ var lat;
 var long;
 var savedLocs;
 receiveFromLocalJSON();
-
 findLocation();
-
-
 
 //function that checks if location is near a defined Location
 async function findLocation() {
@@ -37,14 +34,13 @@ function calculatePosition(position) {
     ) {
       console.log(element.name);
       document.getElementById("locationText").innerHTML = element.name;
-      localStorage.setItem('location' , element.name)
+      localStorage.setItem("location", element.name);
       locSet = true;
-    } 
+    }
   });
-  if(!locSet){
+  if (!locSet) {
     document.getElementById("locationText").innerHTML = "unknown";
   }
-  
 }
 
 function receiveFromLocalJSON() {
@@ -55,6 +51,7 @@ function receiveFromLocalJSON() {
     cache: false,
     success: function (data) {
       savedLocs = data;
+      localStorage.setItem("locations", JSON.stringify(savedLocs));
     },
   });
 }

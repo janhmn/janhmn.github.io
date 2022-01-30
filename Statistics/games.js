@@ -2,17 +2,9 @@ var gameData;
 
 function runGames() {
   var content = document.getElementById("content");
-  content.innerHTML = "<h2>Loading...</h2>";
-  loadGameData();
-}
-
-function loadGameData() {
-  receiveGameData().then(function (data) {
-    gameData = data;
-    setTimeout(() => {
-      listGames();
-    }, 300);
-  });
+  content.innerHTML = "";
+  gameData = JSON.parse(localStorage.getItem("pastGames"));
+  listGames();
 }
 
 function listGames() {

@@ -4,84 +4,12 @@ var locations;
 
 function runLocation() {
   console.log("running location");
+  gameData = JSON.parse(localStorage.getItem("pastGames"));
+  playerData = JSON.parse(localStorage.getItem("players"));
+  locations = JSON.parse(localStorage.getItem("locations"));
   const content = document.getElementById("content");
-  content.innerHTML = "<h2>Loading...</h2>";
-  loadLocationData();
-}
-
-function loadLocationData() {
-  receiveGameData()
-    .then(function (data) {
-      gameData = data;
-      console.log(gameData);
-    })
-    .then(
-      receivePlayerData().then(function (data) {
-        playerData = data;
-        console.log(playerData);
-      })
-    )
-    .then(
-      receiveLocationData().then(function (data) {
-        locations = data;
-        console.log(locations);
-        setTimeout(() => {
-          content.innerHTML = "";
-          replaceContentWithLocation();
-        }, 200);
-      })
-    );
-}
-
-function receiveGameData() {
-  return new Promise(function (resolve, reject) {
-    $.ajax({
-      url: "../Data/games.json",
-      dataType: "json",
-      type: "get",
-      cache: false,
-      success: function (data) {
-        resolve(data);
-      },
-      error: function (err) {
-        reject(err);
-      },
-    });
-  });
-}
-
-function receivePlayerData() {
-  return new Promise(function (resolve, reject) {
-    $.ajax({
-      url: "../Data/players.json",
-      dataType: "json",
-      type: "get",
-      cache: false,
-      success: function (data) {
-        resolve(data);
-      },
-      error: function (err) {
-        reject(err);
-      },
-    });
-  });
-}
-
-function receiveLocationData() {
-  return new Promise(function (resolve, reject) {
-    $.ajax({
-      url: "../Data/locations.json",
-      dataType: "json",
-      type: "get",
-      cache: false,
-      success: function (data) {
-        resolve(data);
-      },
-      error: function (err) {
-        reject(err);
-      },
-    });
-  });
+  content.innerHTML = "";
+  replaceContentWithLocation();
 }
 
 function replaceContentWithLocation() {

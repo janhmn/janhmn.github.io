@@ -8,55 +8,9 @@ function runTable() {
 }
 
 function loadData() {
-  receiveGameData()
-    .then(function (data) {
-      gameData = data;
-      console.log(gameData);
-    })
-    .then(
-      receivePlayerData().then(function (data) {
-        playerData = data;
-        console.log(playerData);
-        setTimeout(() => {
-          console.log("waiting a scecond");
-          buildContent();
-        }, 300);
-      })
-    );
-}
-
-function receiveGameData() {
-  return new Promise(function (resolve, reject) {
-    $.ajax({
-      url: "../Data/games.json",
-      dataType: "json",
-      type: "get",
-      cache: false,
-      success: function (data) {
-        resolve(data);
-      },
-      error: function (err) {
-        reject(err);
-      },
-    });
-  });
-}
-
-function receivePlayerData() {
-  return new Promise(function (resolve, reject) {
-    $.ajax({
-      url: "../Data/players.json",
-      dataType: "json",
-      type: "get",
-      cache: false,
-      success: function (data) {
-        resolve(data);
-      },
-      error: function (err) {
-        reject(err);
-      },
-    });
-  });
+  gameData = JSON.parse(localStorage.getItem("pastGames"));
+  playerData = JSON.parse(localStorage.getItem("players"));
+  buildContent();
 }
 
 function buildContent() {
@@ -154,7 +108,7 @@ function sortData(data) {
 }
 
 function generateContent(tableContent) {
-  var result = '<div>';
+  var result = "<div>";
   result += '<table class="table tableba">';
   result += '<thead> <tr><th scope="col">Name</th>';
   result += '<th scope="col">Record</th>';
