@@ -54,15 +54,11 @@
 }
 
 .barSize {
-  height: 10%;
   background-color: #f20530;
-
   display: flex;
   align-items: center;
   justify-content: center;
 
-  margin: 0px;
-  position: absolute;
 }
 
 #mainBody {
@@ -103,4 +99,10 @@
 
 .noClick {
   pointer-events: none;
+}
+
+
+#footerCont{
+  bottom: 0px;
+  position: fixed;
 }
