@@ -12,32 +12,27 @@
 }
 
 #content {
-  margin-top: 15px;
-  position: absolute;
-  top: 10%;
+  padding-top: 1rem;
   text-align: center;
 }
 
 #gameOrder {
-  margin-top: 10%;
-  margin-bottom: 10%;
+  padding-top: 1rem;
 }
 
 #hitButtonRow {
-  margin-top: 10%;
-  margin-bottom: 10%;
+  padding-top: 1rem;
 }
 
 #locationDiv {
-  position: absolute;
-  bottom: 10%;
+  padding-top: 1rem;
+  
 }
 
 #locationCol{
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 0px;
 }
 
@@ -49,15 +44,12 @@
 
 
 .barSize {
-  height: 10%;
   background-color: #f20530;
+  padding: 1rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
-  margin: 0px;
-  position: absolute;
 }
 
 .h1 {
@@ -163,3 +155,7 @@
   justify-content: center;
 }
 
+#footer{
+  bottom: 0px;
+  position: fixed;
+}
